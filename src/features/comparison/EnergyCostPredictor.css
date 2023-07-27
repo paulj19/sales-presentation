@@ -1,0 +1,13 @@
+.prediction-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-prediction {
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+    border: 1px solid black;
+}

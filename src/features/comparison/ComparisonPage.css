@@ -1,0 +1,42 @@
+.comparison-box {
+    border: 1px solid black;
+    display: flex;
+    height: 80vh;
+}
+
+.comparison-box>div {
+    flex: 1;
+}
+
+.with-sonar {}
+
+.without-sonar {}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input[type="range"] {
+    width: 300px;
+    cursor: pointer;
+}
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    writing-mode: vertical-lr;
+}
+
+option {
+    padding: 0;
+    transform: rotate(-90deg);
+}
+
+option::after {
+    background-color: red;
+}
