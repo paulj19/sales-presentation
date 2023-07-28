@@ -1,0 +1,17 @@
+.prediction-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.price-prediction {
+    border: 1px solid black;
+}
+
+.cost-sum {
+    display: flex;
+    flex-direction: row;
+}
+
+.cost-elements {
+    flex: 1;
+}

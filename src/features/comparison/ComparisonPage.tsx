@@ -1,6 +1,6 @@
 import WithSonar from "./WithSonar";
-import EnergyCostPredictor from "./EnergyCostPredictor";
-import "./ComparisonPage.css";
+import EnergyCostPredictionModal from "./EnergyCostPredictionModal";
+import "./css/ComparisonPage.css";
 import { useEffect, useId, useState } from "react";
 import { EnergyCostPredictionProps, PredictionParams, UserPredictionParams } from "../../types/types";
 import { fetchAllPredictionParams as fetchAllPredictionParams } from "../../api/ComparisonPageApi";

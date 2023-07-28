@@ -15,6 +15,7 @@
     "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
     "react-scripts": "5.0.1",
     "recharts": "^2.7.2",
     "typescript": "^5.1.6",
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.22.5",
+    "@types/react-modal": "^3.16.0",
     "babel-plugin-module-resolver": "^5.0.0",
     "msw": "^1.2.3",
     "prettier": "^3.0.0"
