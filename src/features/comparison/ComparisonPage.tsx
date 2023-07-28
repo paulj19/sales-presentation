@@ -4,6 +4,7 @@ import "./ComparisonPage.css";
 import { useEffect, useId, useState } from "react";
 import { EnergyCostPredictionProps, PredictionParams, UserPredictionParams } from "../../types/types";
 import { fetchAllPredictionParams as fetchAllPredictionParams } from "../../api/ComparisonPageApi";
+import ComparisonChart from "./ComparisonChart";
 
 export default function ComparisonPage() {
   const [userId, setUserId] = useState<number>(123);
@@ -28,16 +29,18 @@ export default function ComparisonPage() {
   }, [userId])
 
 
+  // <div className="without-sonar">
+  //   {userPredictionParams && predictionParams ?
+  //     <EnergyCostPredictor year={year} userPredictionParams={userPredictionParams} predictionParams={predictionParams} /> : null}
+  // </div>
+  // <div className="with-sonar">
+  //   <WithSonar />
+  // </div>
   return (
     <>
       <div className="comparison-box">
-        <div className="without-sonar">
-          {userPredictionParams && predictionParams ?
-            <EnergyCostPredictor year={year} userPredictionParams={userPredictionParams} predictionParams={predictionParams} /> : null}
-        </div>
-        <div className="with-sonar">
-          <WithSonar />
-        </div>
+        {userPredictionParams && predictionParams ?
+          <ComparisonChart year={year} userPredictionParams={userPredictionParams} predictionParams={predictionParams} /> : null}
       </div>
       <div className="slider-container">
         <input type="range" name="year-selector" min={"0"} max={"25"} step={5} defaultValue={"0"} list="values" onChange={(e) => setYear(Number(e.target.value))} />

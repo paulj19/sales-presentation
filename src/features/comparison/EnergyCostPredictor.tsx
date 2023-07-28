@@ -1,14 +1,15 @@
 import "./EnergyCostPredictor.css"
 import type { EnergyCostPredictionProps } from "../../types/types";
+import { getMonthlyPredictedCost, getTotalPredictedCost } from "../../util/EnergyCostCalculator";
 
-export default function EnergyCostPredictor({ year, userPredictionParams: { usageMonthly }, predictionParams: { priceBase, inflationRate, priceCurrentAvgKwh } }: EnergyCostPredictionProps) {
-  console.log(usageMonthly)
-  const pricePredictedKwh: number = priceCurrentAvgKwh * (1 + inflationRate) ** year;
-  const costMonthlyPredicted: number = Math.ceil(usageMonthly * pricePredictedKwh);
-  const costTotal = priceBase + costMonthlyPredicted;
+export default function EnergyCostPredictor(predictionProps: EnergyCostPredictionProps) {
+  const year: number = predictionProps.year;
+  const priceBase: number = predictionProps.predictionParams.priceBase;
+  const costMonthlyPredicted: number = getMonthlyPredictedCost(predictionProps);
+  const costTotal = getTotalPredictedCost(predictionProps);
   return (
     <div className="prediction-main">
-      <h1>{"Ohne Enpal"}</h1>
+      <p>{""}</p>
       <div className="price-prediction">{`Ihre Strom kosten nach ${year} jahr: ` + `${priceBase}€(grundbehühr) +` + costMonthlyPredicted + `€(gebrauch) = ${costTotal}€`}</div>
     </div>
   )
