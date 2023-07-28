@@ -4,47 +4,16 @@ import { EnergyCostPredictionProps } from '../../types/types';
 import { getTotalPredictedCost } from '../../util/EnergyCostCalculator';
 import { getTotalEnpalCost } from '../../util/MitEnpalCostCalculator';
 
-const data = [
-    {
-        name: 'heute',
-        Ohne_PV: 100,
-        Mit_Enpal: 150,
-    },
-    {
-        name: '5',
-        Ohne_PV: 150,
-        Mit_Enpal: 155,
-    },
-    {
-        name: '10',
-        Ohne_PV: 200,
-        Mit_Enpal: 160,
-    },
-    {
-        name: '15',
-        Ohne_PV: 250,
-        Mit_Enpal: 165,
-    },
-    {
-        name: '20',
-        Ohne_PV: 300,
-        Mit_Enpal: 170,
-    },
-    {
-        name: '25',
-        Ohne_PV: 350,
-        Mit_Enpal: 3,
-    }
-];
-
 export default function ComparisonChart(predictionProps: EnergyCostPredictionProps) {
     const year = predictionProps.year;
     let comparisonData = [];
-    for (let i = 0; i <= year; i += 5) {
-        comparisonData.push({ name: i, Ohne_PV: getTotalPredictedCost({ ...predictionProps, year: i }), Mit_Enpal: getTotalEnpalCost({ ...predictionProps, year: i }) })
+    for (let i = 0; i <= 25; i += 5) {
+        if (i > year) {
+            comparisonData.push({ year: i + 2013 })
+            continue
+        }
+        comparisonData.push({ year: i + 2013, Ohne_PV: getTotalPredictedCost({ ...predictionProps, year: i }), Mit_Enpal: getTotalEnpalCost({ ...predictionProps, year: i }) })
     }
-    console.log(JSON.stringify(comparisonData))
-
     return (
         <ResponsiveContainer width="100%" height="100%">
             <LineChart
@@ -59,12 +28,12 @@ export default function ComparisonChart(predictionProps: EnergyCostPredictionPro
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis type="number" domain={[0, "auto"]} tickCount={6} />
-                <YAxis type="number" domain={[0, "auto"]} tickCount={10} />
+                <XAxis dataKey="year" />
+                <YAxis ticks={[0, 50, 100, 150, 200, 250, 300, 350]} />
                 <Tooltip />
                 <Legend />
                 <Line type="monotone" dataKey="Ohne_PV" stroke="#FF0000" activeDot={{ r: 8 }} />
-                <Line type="monotone" dataKey="Mit_Enpal" stroke="#0095FF" />
+                <Line type="monotone" dataKey="Mit_Enpal" stroke="green" />
             </LineChart>
         </ResponsiveContainer>
     );

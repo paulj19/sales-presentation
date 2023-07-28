@@ -2,7 +2,8 @@ import { EnergyCostPredictionProps } from "../types/types";
 
 export function getTotalEnpalCost(predictionProps: EnergyCostPredictionProps) {
     const year = predictionProps.year;
-    const fixedInitial = year < 25 ? 105 : 0;
-    const totalCost = fixedInitial + 10 + 1 * (1 + 0.0005) ** year;
+    const inflationRate = predictionProps.predictionParams.inflationRate;
+    const fixedInitial = year < 13 ? 125 : 0;
+    const totalCost = Math.ceil(fixedInitial + 10 + 5 * (1 + inflationRate) ** year);
     return totalCost;
 }
