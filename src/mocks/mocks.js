@@ -7,11 +7,13 @@ export const handlers = [
             priceBase: 10,
             inflationRate: 0.05,
             priceCurrentAvgKwh: 0.40,
+            priceEnpalMonthly: 125,
         }), ctx.status(200));
     }),
     rest.get(URL_ENERGY_USAGE, (req, res, ctx) => {
         return res(ctx.json({
             usageMonthly: 250,
+            surplus: 7,
         }), ctx.status(200));
     })
 ]

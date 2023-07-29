@@ -2,14 +2,16 @@ export type PredictionParams = {
     priceBase: number;
     inflationRate: number;
     priceCurrentAvgKwh: number;
+    priceEnpalMonthly: number;
 }
 
 export type EnergyCostPredictionProps = {
     year: number;
-    userPredictionParams: UserPredictionParams;
+    userSpecificParams: UserSpecificParams;
     predictionParams: PredictionParams;
 }
 
-export type UserPredictionParams = {
+export type UserSpecificParams = {
     usageMonthly: number;
+    surplus: number;
 }
