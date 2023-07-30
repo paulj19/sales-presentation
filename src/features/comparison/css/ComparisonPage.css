@@ -10,6 +10,11 @@
     flex: 1;
 }
 
+.graph-slider {
+    display: flex;
+    flex-direction: column;
+}
+
 .with-sonar {}
 
 .without-sonar {}

@@ -1,11 +1,15 @@
-.prediction-main {
+.comparisoin-main {
     display: flex;
     flex-direction: row;
 }
 
-.price-prediction {
+.comparisoin-main>div {
+    flex: 1;
     border: 1px solid black;
+    padding: 20px;
+    height: 500px;
 }
+
 
 .cost-sum {
     display: flex;
