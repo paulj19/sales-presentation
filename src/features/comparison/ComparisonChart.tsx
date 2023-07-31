@@ -5,6 +5,7 @@ import { getPredictedMonthlyUsageCost, getPredictedMonthlyTotalCost } from '../.
 import { getTotalSolarCost } from '../../util/SolarCostCalculator';
 import Modal from 'react-modal';
 import "./css/EnergyCostPredictor.css"
+import "./css/ComparisonPage.css"
 import EnergyCostComaprison from './EnergyCostComaprison';
 import { StateContext } from './ComparisonPage';
 import Slider from './Slider';
@@ -57,7 +58,7 @@ export default function ComparisonChart() {
                         <Tooltip />
                         <Legend />
                         <Line type="monotone" dataKey="Ohne_PV" stroke="#FF0000" activeDot={{ r: 8 }} label={CustomizedLabel} />
-                        <Line type="monotone" dataKey="Mit_Enpal" stroke="green" label={CustomizedLabel} />
+                        <Line hide={true} type="monotone" dataKey="Mit_Enpal" stroke="green" label={CustomizedLabel} />
                     </LineChart>
                 </ResponsiveContainer>
                 <Slider year={year} setYear={setYear} />
@@ -68,7 +69,7 @@ export default function ComparisonChart() {
 
 function CustomizedLabel({ x, y, stroke, value }) {
     return (
-        <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">
+        <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} className='custom-label' textAnchor="middle">
             {value + "€"}
         </text>
     );

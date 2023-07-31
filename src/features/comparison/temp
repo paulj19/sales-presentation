@@ -1,5 +1,0 @@
-<XAxis type="number" domain={[0, 400]} tickCount={6} />
-<YAxis type="number" domain={[0, 500]} tickCount={10} /const data=[ { name: 'heute' , Ohne_PV: 100, Mit_Enpal: 150, }, {
-    name: '5' , Ohne_PV: 150, Mit_Enpal: 155, }, { name: '10' , Ohne_PV: 200, Mit_Enpal: 160, }, { name: '15' , Ohne_PV:
-    250, Mit_Enpal: 165, }, { name: '20' , Ohne_PV: 300, Mit_Enpal: 170, }, { name: '25' , Ohne_PV: 350, Mit_Enpal: 3, }
-    ];>

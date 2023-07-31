@@ -7,7 +7,7 @@ export function EnergyCostPredictor({ year }) {
     const costMonthly = state.costPredicted[year].energyCostUsage;
     const costTotal = state.costPredicted[year].energyCostTotal;
     return (
-        <div className="price-prediction">
+        <div className="energy-price-prediction">
             <div className=""><h1>{year === 1 ? `Ihre akutall Stromkosten` : `Ihre Strom kosten nach ${year} jahr: `}</h1></div>
             <div className="cost-sum">
                 <div className="cost-elements">

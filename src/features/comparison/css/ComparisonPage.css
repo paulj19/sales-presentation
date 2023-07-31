@@ -48,3 +48,8 @@ option {
 option::after {
     background-color: red;
 }
+
+.custom-label {
+    color: gray;
+
+}

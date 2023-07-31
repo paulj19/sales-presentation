@@ -1,13 +1,28 @@
-.comparisoin-main {
-    display: flex;
-    flex-direction: row;
+.comparison-container {
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
 }
 
-.comparisoin-main>div {
+.comparison-section {
+    display: flex;
+    flex-direction: row;
+    /* grid-row: 1/10; */
+}
+
+.comparison-section>div {
     flex: 1;
     border: 1px solid black;
     padding: 20px;
-    height: 500px;
+    height: 570px;
+}
+
+.total-cost-savings {
+    /* grid-row: 10/12; */
+    margin: auto;
+}
+
+.slider {
+    /* grid-row: 12; */
 }
 
 
@@ -19,3 +34,6 @@
 .cost-elements {
     flex: 1;
 }
+
+
+.energy-price-prediction {}
